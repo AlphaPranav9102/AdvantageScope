@@ -1,4 +1,4 @@
-# AdvantageScope
+# ![AdvantageScope](/banner.png)
 
 [![Build](https://github.com/Mechanical-Advantage/AdvantageScope/actions/workflows/build.yml/badge.svg?branch=main)](https://github.com/Mechanical-Advantage/AdvantageScope/actions/workflows/build.yml)
 
@@ -23,3 +23,42 @@ It includes the following tools:
 
 1. Find the [latest release](https://github.com/Mechanical-Advantage/AdvantageScope/releases/latest) under "Releases".
 2. Download the appropriate build based on the OS & architecture. AdvantageScope supports Windows, macOS, and Linux on both x86 and ARM architectures.
+
+## Building
+
+To install all dependencies, run:
+
+```bash
+npm install
+```
+
+To build for the current platform, run:
+
+```bash
+npm run build
+```
+
+To build for another platform, run:
+
+```bash
+npm run build -- --win --x64 # For full list of options, run "npx electron-builder help"
+```
+
+To build the WPILib version, set the environment variable `ASCOPE_DISTRIBUTOR` to `WPILIB` before building:
+
+```bash
+export ASCOPE_DISTRIBUTOR=WPILIB
+```
+
+For development, run:
+
+```bash
+npm run watch
+npm start
+```
+
+## Assets
+
+For details on adding custom assets, see [Custom Assets](/docs/CUSTOM-ASSETS.md).
+
+Bundled assets are stored under [`bundledAssets`](/bundledAssets/). Larger assets are downloaded automatically by AdvantageScope from the [AdvantageScopeAssets](https://github.com/Mechanical-Advantage/AdvantageScopeAssets/releases) repository.
